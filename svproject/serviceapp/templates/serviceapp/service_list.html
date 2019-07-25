@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <meta charset="UTF-8">
+
+</head>
+
+
+
+
+<p>
+
+</p>
+
+ <img src="cropped-Logo1-3.jpg"alt="">
+
+
+
+        <h2>Provides complete solution for Telecom & Networking Infrastructure</h2>
+
+<h3> Specialised in Fiber technology </h3>
+
+<h3>Infomates Services </h3>
+
+<ul>
+    <li>
+        Telecom Projects
+    </li>
+    <li>
+     Networking Projects
+    </li>
+    <li>
+        IT Services,Surveys ,Consulting and Technical Support.
+    </li>
+    <li>
+       Surveillance systems
+    </li>
+<li>
+       Special Projects
+    </li>
+    </ul>
+
+
+
+<h3>Services and Rates </h3>
+
+<table border="2">
+<thead>
+    <tr>
+
+    <th>Name</th>
+    <th>Rate</th>
+    <th>View</th>
+    <th>Edit</th>
+    <th>Delete</th>
+    </tr>
+</thead>
+<tbody>
+    {% for service in object_list %}
+    <tr>
+    <td>{{ service.name }}</td>
+    <td>{{ service.rate }}</td>
+
+    <td><a href="{% url "service_view" service.id %}">view</a></td>
+    <td><a href="{% url "service_edit" service.id %}">edit</a></td>
+    <td><a href="{% url "service_delete" service.id %}">delete</a></td>
+
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+
+
+<a href="{% url "service_new" %}">New</a>
+
+
+
+</html>
